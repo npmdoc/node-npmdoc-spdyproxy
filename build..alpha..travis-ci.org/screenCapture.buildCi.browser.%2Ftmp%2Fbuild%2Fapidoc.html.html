@@ -1,0 +1,2262 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/igrigorik/node-spdyproxy">spdyproxy (v0.2.7)</a>
+</h1>
+<h4>Fast, secure forward proxy: secure connection to proxy and ability to tunnel HTTP, HTTPS, and SPDY.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy">module spdyproxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_
+            <span class="apidocSignatureSpan">(options, requestListener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._init
+            <span class="apidocSignatureSpan">(base, options, handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._onConnection
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._wrap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.cmdpwdhelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>cmdpwdhelper
+            <span class="apidocSignatureSpan">(correct_user, correct_pass)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.createServer">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>createServer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.logginghelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>logginghelper
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.radiushelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>radiushelper
+            <span class="apidocSignatureSpan">(server, port, secret, nasid, cred_ttl, verbose)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>cmdpwdhelper.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>logginghelper.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>radiushelper.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spdyproxy.</span>server</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy">module spdyproxy.SPDYProxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.SPDYProxy">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.</span>super_
+            <span class="apidocSignatureSpan">(options, requestListener)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_">module spdyproxy.SPDYProxy.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.super_">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.</span>super_
+            <span class="apidocSignatureSpan">(opts, requestListener)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype">module spdyproxy.SPDYProxy.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_init
+            <span class="apidocSignatureSpan">(base, options, handler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_onConnection
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_wrap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._init">module spdyproxy.SPDYProxy.super_.prototype._init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init._init">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_init
+            <span class="apidocSignatureSpan">(base, options, handler)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._onConnection">module spdyproxy.SPDYProxy.super_.prototype._onConnection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection._onConnection">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_onConnection
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._wrap">module spdyproxy.SPDYProxy.super_.prototype._wrap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap._wrap">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_wrap
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.super_.prototype">module spdyproxy.SPDYProxy.super_.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.SPDYProxy.super_.super_.prototype.setTimeout">
+            function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.super_.prototype.</span>setTimeout
+            <span class="apidocSignatureSpan">(msecs, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.cmdpwdhelper">module spdyproxy.cmdpwdhelper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.cmdpwdhelper.cmdpwdhelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>cmdpwdhelper
+            <span class="apidocSignatureSpan">(correct_user, correct_pass)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.cmdpwdhelper.prototype">module spdyproxy.cmdpwdhelper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.cmdpwdhelper.prototype.authUser">
+            function <span class="apidocSignatureSpan">spdyproxy.cmdpwdhelper.prototype.</span>authUser
+            <span class="apidocSignatureSpan">(username, password, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.createServer">module spdyproxy.createServer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.createServer.createServer">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>createServer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.logginghelper">module spdyproxy.logginghelper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.logginghelper.logginghelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>logginghelper
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.logginghelper.prototype">module spdyproxy.logginghelper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.logginghelper.prototype.log">
+            function <span class="apidocSignatureSpan">spdyproxy.logginghelper.prototype.</span>log
+            <span class="apidocSignatureSpan">(socket, req)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.radiushelper">module spdyproxy.radiushelper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.radiushelper.radiushelper">
+            function <span class="apidocSignatureSpan">spdyproxy.</span>radiushelper
+            <span class="apidocSignatureSpan">(server, port, secret, nasid, cred_ttl, verbose)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.radiushelper.prototype">module spdyproxy.radiushelper.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.radiushelper.prototype.acctAdd">
+            function <span class="apidocSignatureSpan">spdyproxy.radiushelper.prototype.</span>acctAdd
+            <span class="apidocSignatureSpan">(packet_length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.radiushelper.prototype.authUser">
+            function <span class="apidocSignatureSpan">spdyproxy.radiushelper.prototype.</span>authUser
+            <span class="apidocSignatureSpan">(username, password, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spdyproxy.server">module spdyproxy.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.server.SPDYProxy">
+            function <span class="apidocSignatureSpan">spdyproxy.server.</span>SPDYProxy
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spdyproxy.server.createServer">
+            function <span class="apidocSignatureSpan">spdyproxy.server.</span>createServer
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy" id="apidoc.module.spdyproxy">module spdyproxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy" id="apidoc.element.spdyproxy.SPDYProxy">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SPDYProxy = function (options) {
+  var self = this;
+
+  this.setAuthHandler = function(handler) {
+    self._authHandler = handler;
+    console.log('AuthHandler'.green, handler.friendly_name.yellow,
+                'will be used.'.green);
+  }
+
+  this.setLogHandler = function(handler) {
+    self._logHandler = handler;
+    console.log('Requests will be logged into file'.green, handler._filename.yellow);
+  }
+
+  function logRequest(req) {
+    console.log(req.method.green + ' ' + req.url.yellow);
+    for (var i in req.headers)
+      console.log(' &gt; '.grey + i.cyan + ': ' + req.headers[i]);
+    console.log();
+  }
+
+  function synReply(socket, code, reason, headers, cb) {
+    try {
+      // SPDY socket
+      if(socket._lock){
+        socket._lock(function() {
+          var socket = this;
+          this._spdyState.framer.replyFrame(
+            this._spdyState.id, code, reason, headers,
+            function (err, frame) {
+              socket.connection.write(frame);
+              socket._unlock();
+              cb.call();
+            }
+          );
+        });
+
+      // Chrome used raw SSL instead of SPDY when issuing CONNECT for
+      // WebSockets. Hence, to support WS we must fallback to regular
+      // HTTPS tunelling: https://github.com/igrigorik/node-spdyproxy/issues/26
+      } else {
+        var statusLine = 'HTTP/1.1 ' + code + ' ' + reason + '\r\n';
+        var headerLines = '';
+        for(key in headers){
+            headerLines += key + ': ' + headers[key] + '\r\n';
+        }
+        socket.write(statusLine + headerLines + '\r\n', 'UTF-8', cb);
+      }
+    } catch(error) {
+      cb.call();
+    }
+  }
+
+  function handlePlain(req, res) {
+    var path = req.headers.path || url.parse(req.url).path;
+    var requestOptions = {
+      host: req.headers.host.split(':')[0],
+      port: req.headers.host.split(':')[1] || 80,
+      path: path,
+      method: req.method,
+      headers: req.headers
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var rreq = http.request(requestOptions, function(rres) {
+      rres.headers['proxy-agent'] = 'SPDY Proxy ' + options.version;
+
+      // write out headers to handle redirects
+      res.writeHead(rres.statusCode, '', rres.headers);
+      rres.pipe(res);
+
+      // Res could not write, but it could close connection
+      res.pipe(rres);
+    });
+
+    rreq.on('error', function(e) {
+      console.log("Client error: " + e.message);
+      res.writeHead(502, 'Proxy fetch failed');
+      res.end();
+    });
+
+    req.pipe(rreq);
+
+    // Just in case if socket will be shutdown before http.request will connect
+    // to the server.
+    res.on('close', function() {
+      rreq.abort();
+    });
+  }
+
+  function handleSecure(req, socket) {
+    var requestOptions = {
+      host: req.url.split(':')[0],
+      port: req.url.split(':')[1] || 443,
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var tunnel = net.createConnection(requestOptions, function() {
+      synReply(socket, 200, 'Connection established',
+        {
+          'Connection': 'keep-alive',
+          'Proxy-Agent': 'SPDY Proxy ' + options.version
+        },
+        function() {
+          tunnel.pipe(socket);
+          socket.pipe(tunnel);
+        }
+      );
+    });
+
+    tunnel.setNoDelay(true);
+
+    tunnel.on('error', function(e) {
+      console.log("Tunnel error: ".red + e);
+      synReply(socket, 502, "Tunnel Error", {}, function() {
+        socket.end();
+      });
+    });
+  }
+
+  function handleRequest(req, res) {
+    var socket = (req.method == 'CONNECT') ? res : res.socket;
+    console.log("%s:%s".yellow + " - %s - " + "stream ID: " + "%s".yellow + " - priority: " + "%s".yellow,
+      socket.connection ? socket.connection.socket.remoteAddress : socket.socket.remoteAddress,
+      socket.connection ? socket.connection.socket.remotePort : socket.socket.remotePort,
+      req.method, res.id || (socket._spdyState &amp;&amp; socket._spdyState.id) || "none",
+      res.priority || (socket._spdyState &amp;&amp; socket._spdyState.priority) || "none"
+    );
+
+    // node- ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_" id="apidoc.element.spdyproxy.SPDYProxy.super_">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_
+        <span class="apidocSignatureSpan">(options, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options, requestListener) {
+  // Initialize
+  this._init(HTTPSServer, options, requestListener);
+
+  // Wrap connection handler
+  this._wrap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._init
+        <span class="apidocSignatureSpan">(base, options, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _init(base, options, handler) {
+  var state = {};
+  this._spdyState = state;
+
+  if (!options)
+    options = {};
+
+  // Copy user supplied options
+  options = util._extend({}, options);
+
+  var supportedProtocols = [
+    'spdy/3.1', 'spdy/3', 'spdy/2',
+    'http/1.1', 'http/1.0'
+  ];
+  options.NPNProtocols = supportedProtocols;
+  options.ALPNProtocols = supportedProtocols;
+  options.isServer = true;
+
+  // Header compression is enabled by default in servers, in contrast to clients
+  // where it is disabled to prevent CRIME attacks.
+  // See: https://groups.google.com/d/msg/spdy-dev/6mVYRv-lbuc/qGcW2ldOpt8J
+  if (options.headerCompression !== false)
+    options.headerCompression = true;
+
+  state.options = options;
+  state.reqHandler = handler;
+
+  if (options.plain &amp;&amp; !options.ssl)
+    base.call(this, handler);
+  else
+    base.call(this, options, handler);
+
+  // Use https if neither NPN or ALPN is supported
+  if (!process.features.tls_npn &amp;&amp; !process.features.tls_alpn &amp;&amp;
+      !options.debug &amp;&amp; !options.plain)
+    return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._onConnection
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onConnection(socket) {
+  var self = this,
+      state = this._spdyState;
+
+  // Fallback to HTTPS if needed
+  var selectedProtocol = socket.npnProtocol || socket.alpnProtocol;
+  if ((!selectedProtocol || !selectedProtocol.match(/spdy/)) &amp;&amp;
+      !state.options.debug &amp;&amp; !state.options.plain) {
+    return state.handler.call(this, socket);
+  }
+
+  // Wrap incoming socket into abstract class
+  var connection = new Connection(socket, state.options, this);
+  if (selectedProtocol === 'spdy/3.1')
+    connection._setVersion(3.1);
+  else if (selectedProtocol === 'spdy/3')
+    connection._setVersion(3);
+  else if (selectedProtocol === 'spdy/2')
+    connection._setVersion(2);
+
+  // Emulate each stream like connection
+  connection.on('stream', state.handler);
+
+  connection.on('connect', function onconnect(req, socket) {
+    socket.streamID = req.streamID = req.socket._spdyState.id;
+    socket.isSpdy = req.isSpdy = true;
+    socket.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+
+    socket.once('finish', function onfinish() {
+      req.connection.end();
+    });
+
+    self.emit('connect', req, socket);
+  });
+
+  connection.on('request', function onrequest(req, res) {
+    // Copy extension methods
+    res._renderHeaders = spdy.response._renderHeaders;
+    res.writeHead = spdy.response.writeHead;
+    res.end = spdy.response.end;
+    res.push = spdy.response.push;
+    res.streamID = req.streamID = req.socket._spdyState.id;
+    res.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+    res.isSpdy = req.isSpdy = true;
+    res.addTrailers = function addTrailers(headers) {
+      res.socket.sendHeaders(headers);
+    };
+
+    // Make sure that keep-alive won't apply to the response
+    res._last = true;
+
+    // Chunked encoding is not supported in SPDY
+    res.useChunkedEncodingByDefault = false;
+
+    // Populate trailing headers
+    req.connection.on('headers', function(headers) {
+      Object.keys(headers).forEach(function(key) {
+        req.trailers[key] = headers[key];
+      });
+      req.emit('trailers', headers);
+    });
+
+    self.emit('request', req, res);
+  });
+
+  connection.on('error', function onerror(e) {
+    socket.destroy(e.errno === 'EPIPE' ? undefined : e);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy.super_.prototype._wrap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _wrap() {
+  var self = this,
+      state = this._spdyState;
+
+  // Wrap connection handler
+  var event = state.options.plain &amp;&amp; !state.options.ssl ? 'connection' :
+                                                          'secureConnection',
+      handler = this.listeners(event)[0];
+
+  state.handler = handler;
+
+  this.removeAllListeners(event);
+
+  // 2 minutes default timeout
+  if (state.options.timeout !== undefined)
+    this.timeout = state.options.timeout;
+  else
+    this.timeout = this.timeout || 2 * 60 * 1000;
+
+  // Normal mode, use NPN or ALPN to fallback to HTTPS
+  if (!state.options.plain)
+    return this.on(event, this._onConnection.bind(this));
+
+  // In case of plain connection, we must fallback to HTTPS if first byte
+  // is not equal to 0x80.
+  this.on(event, function(socket) {
+    var history = [],
+        _emit = socket.emit;
+
+    // Add 'data' listener, otherwise 'data' events won't be emitted
+    if (spdy.utils.isLegacy) {
+      function ondata() {};
+      socket.once('data', ondata);
+    }
+
+    // 2 minutes timeout, as http.js does by default
+    socket.setTimeout(self.timeout);
+
+    socket.emit = function emit(event, data) {
+      history.push(Array.prototype.slice.call(arguments));
+
+      if (event === 'data') {
+        // Legacy
+        if (spdy.utils.isLegacy)
+          onFirstByte.call(socket, data);
+      } else if (event === 'readable') {
+        // Streams
+        onReadable.call(socket);
+      } else if (event === 'end' ||
+                 event === 'close' ||
+                 event === 'error' ||
+                 event === 'timeout') {
+        // We shouldn't get there if any data was received
+        fail();
+      }
+    };
+
+    function fail() {
+      socket.emit = _emit;
+      history = null;
+      socket.removeListener('readable', onReadable);
+
+      try {
+        socket.destroy();
+      } catch (e) {
+      }
+    }
+
+    function restore() {
+      var copy = history.slice();
+      history = null;
+
+      socket.removeListener('readable', onReadable);
+      if (spdy.utils.isLegacy)
+        socket.removeListener('data', ondata);
+      socket.emit = _emit;
+      for (var i = 0; i &lt; copy.length; i++) {
+        if (copy[i][0] !== 'data' || spdy.utils.isLegacy)
+          socket.emit.apply(socket, copy[i]);
+        if (copy[i][0] === 'end' &amp;&amp; socket.onend)
+          socket.onend();
+      }
+    }
+
+    function onFirstByte(data) {
+      // Ignore empty packets
+      if (data.length === 0)
+        return;
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      // NOTE: If we came there - .ondata() will be called anyway in this tick,
+      // so there're no need to call it manually
+    };
+
+    // Hack to make streams2 work properly
+    if (!spdy.utils.isLegacy)
+      socket.on('readable', onReadable);
+
+    function onReadable() {
+      var data = socket.read(1);
+
+      // Ignore empty packets
+      if (!data)
+        return;
+      socket.removeListener('readable', onReadable);
+
+      // `.unshift()` emits `readable` event. Thus `emit` method should
+      // be restored before calling it.
+      socket.emit = _emit;
+
+      // Put packet back where it was before
+      socket.unshift(data);
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      if (socket.ondata) {
+        data = socket.read(socket._readableState.length);
+        if (data)
+          socket.ondata(data, 0, data.length);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.cmdpwdhelper" id="apidoc.element.spdyproxy.cmdpwdhelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>cmdpwdhelper
+        <span class="apidocSignatureSpan">(correct_user, correct_pass)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CmdPwdHelper(correct_user, correct_pass) {
+  this.friendly_name = "cmdline password authenticator";
+  this._correct_user = correct_user;
+  this._correct_pass = correct_pass;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.createServer" id="apidoc.element.spdyproxy.createServer">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>createServer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (options) {
+  return new SPDYProxy(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.logginghelper" id="apidoc.element.spdyproxy.logginghelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>logginghelper
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LoggingHelper(filename) {
+	this._filename = filename;
+	time = dateFormat(new Date (), "%Y-%m-%d %H:%M:%S", false);
+	fs.appendFile(filename, time + ' node-spdyproxy is now running\n', function (err) {
+		if (err) {
+			throw err;
+			process.exit();
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.radiushelper" id="apidoc.element.spdyproxy.radiushelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>radiushelper
+        <span class="apidocSignatureSpan">(server, port, secret, nasid, cred_ttl, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RADIUSHelper(server, port, secret, nasid, cred_ttl, verbose) {
+  this.friendly_name = "RADIUS remote authenticator";
+  this._verbose = verbose;
+
+  this._server = server;
+  this._port = port;
+  this._secret = secret;
+  this._nasid = nasid;
+  this._creds_ttl = cred_ttl;
+
+  this._authPacketId = 0;
+  this._authCallbacks = {};
+  this._authReadyNotify = new EventEmitter();
+  this._authReadyNotify.setMaxListeners(100);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy" id="apidoc.module.spdyproxy.SPDYProxy">module spdyproxy.SPDYProxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.SPDYProxy" id="apidoc.element.spdyproxy.SPDYProxy.SPDYProxy">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>SPDYProxy
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SPDYProxy = function (options) {
+  var self = this;
+
+  this.setAuthHandler = function(handler) {
+    self._authHandler = handler;
+    console.log('AuthHandler'.green, handler.friendly_name.yellow,
+                'will be used.'.green);
+  }
+
+  this.setLogHandler = function(handler) {
+    self._logHandler = handler;
+    console.log('Requests will be logged into file'.green, handler._filename.yellow);
+  }
+
+  function logRequest(req) {
+    console.log(req.method.green + ' ' + req.url.yellow);
+    for (var i in req.headers)
+      console.log(' &gt; '.grey + i.cyan + ': ' + req.headers[i]);
+    console.log();
+  }
+
+  function synReply(socket, code, reason, headers, cb) {
+    try {
+      // SPDY socket
+      if(socket._lock){
+        socket._lock(function() {
+          var socket = this;
+          this._spdyState.framer.replyFrame(
+            this._spdyState.id, code, reason, headers,
+            function (err, frame) {
+              socket.connection.write(frame);
+              socket._unlock();
+              cb.call();
+            }
+          );
+        });
+
+      // Chrome used raw SSL instead of SPDY when issuing CONNECT for
+      // WebSockets. Hence, to support WS we must fallback to regular
+      // HTTPS tunelling: https://github.com/igrigorik/node-spdyproxy/issues/26
+      } else {
+        var statusLine = 'HTTP/1.1 ' + code + ' ' + reason + '\r\n';
+        var headerLines = '';
+        for(key in headers){
+            headerLines += key + ': ' + headers[key] + '\r\n';
+        }
+        socket.write(statusLine + headerLines + '\r\n', 'UTF-8', cb);
+      }
+    } catch(error) {
+      cb.call();
+    }
+  }
+
+  function handlePlain(req, res) {
+    var path = req.headers.path || url.parse(req.url).path;
+    var requestOptions = {
+      host: req.headers.host.split(':')[0],
+      port: req.headers.host.split(':')[1] || 80,
+      path: path,
+      method: req.method,
+      headers: req.headers
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var rreq = http.request(requestOptions, function(rres) {
+      rres.headers['proxy-agent'] = 'SPDY Proxy ' + options.version;
+
+      // write out headers to handle redirects
+      res.writeHead(rres.statusCode, '', rres.headers);
+      rres.pipe(res);
+
+      // Res could not write, but it could close connection
+      res.pipe(rres);
+    });
+
+    rreq.on('error', function(e) {
+      console.log("Client error: " + e.message);
+      res.writeHead(502, 'Proxy fetch failed');
+      res.end();
+    });
+
+    req.pipe(rreq);
+
+    // Just in case if socket will be shutdown before http.request will connect
+    // to the server.
+    res.on('close', function() {
+      rreq.abort();
+    });
+  }
+
+  function handleSecure(req, socket) {
+    var requestOptions = {
+      host: req.url.split(':')[0],
+      port: req.url.split(':')[1] || 443,
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var tunnel = net.createConnection(requestOptions, function() {
+      synReply(socket, 200, 'Connection established',
+        {
+          'Connection': 'keep-alive',
+          'Proxy-Agent': 'SPDY Proxy ' + options.version
+        },
+        function() {
+          tunnel.pipe(socket);
+          socket.pipe(tunnel);
+        }
+      );
+    });
+
+    tunnel.setNoDelay(true);
+
+    tunnel.on('error', function(e) {
+      console.log("Tunnel error: ".red + e);
+      synReply(socket, 502, "Tunnel Error", {}, function() {
+        socket.end();
+      });
+    });
+  }
+
+  function handleRequest(req, res) {
+    var socket = (req.method == 'CONNECT') ? res : res.socket;
+    console.log("%s:%s".yellow + " - %s - " + "stream ID: " + "%s".yellow + " - priority: " + "%s".yellow,
+      socket.connection ? socket.connection.socket.remoteAddress : socket.socket.remoteAddress,
+      socket.connection ? socket.connection.socket.remotePort : socket.socket.remotePort,
+      req.method, res.id || (socket._spdyState &amp;&amp; socket._spdyState.id) || "none",
+      res.priority || (socket._spdyState &amp;&amp; socket._spdyState.priority) || "none"
+    );
+
+    // node- ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_" id="apidoc.element.spdyproxy.SPDYProxy.super_">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.</span>super_
+        <span class="apidocSignatureSpan">(options, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options, requestListener) {
+  // Initialize
+  this._init(HTTPSServer, options, requestListener);
+
+  // Wrap connection handler
+  this._wrap();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_" id="apidoc.module.spdyproxy.SPDYProxy.super_">module spdyproxy.SPDYProxy.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.super_" id="apidoc.element.spdyproxy.SPDYProxy.super_.super_">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.</span>super_
+        <span class="apidocSignatureSpan">(opts, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(opts, requestListener) {
+  if (!(this instanceof Server)) return new Server(opts, requestListener);
+
+  if (process.features.tls_npn &amp;&amp; !opts.NPNProtocols) {
+    opts.NPNProtocols = ['http/1.1', 'http/1.0'];
+  }
+
+  if (process.features.tls_alpn &amp;&amp; !opts.ALPNProtocols) {
+    // http/1.0 is not defined as Protocol IDs in IANA
+    // http://www.iana.org/assignments/tls-extensiontype-values
+    //       /tls-extensiontype-values.xhtml#alpn-protocol-ids
+    opts.ALPNProtocols = ['http/1.1'];
+  }
+
+  tls.Server.call(this, opts, http._connectionListener);
+
+  this.httpAllowHalfOpen = false;
+
+  if (requestListener) {
+    this.addListener('request', requestListener);
+  }
+
+  this.addListener('tlsClientError', function(err, conn) {
+    if (!this.emit('clientError', err, conn))
+      conn.destroy(err);
+  });
+
+  this.timeout = 2 * 60 * 1000;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype" id="apidoc.module.spdyproxy.SPDYProxy.super_.prototype">module spdyproxy.SPDYProxy.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_init
+        <span class="apidocSignatureSpan">(base, options, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _init(base, options, handler) {
+  var state = {};
+  this._spdyState = state;
+
+  if (!options)
+    options = {};
+
+  // Copy user supplied options
+  options = util._extend({}, options);
+
+  var supportedProtocols = [
+    'spdy/3.1', 'spdy/3', 'spdy/2',
+    'http/1.1', 'http/1.0'
+  ];
+  options.NPNProtocols = supportedProtocols;
+  options.ALPNProtocols = supportedProtocols;
+  options.isServer = true;
+
+  // Header compression is enabled by default in servers, in contrast to clients
+  // where it is disabled to prevent CRIME attacks.
+  // See: https://groups.google.com/d/msg/spdy-dev/6mVYRv-lbuc/qGcW2ldOpt8J
+  if (options.headerCompression !== false)
+    options.headerCompression = true;
+
+  state.options = options;
+  state.reqHandler = handler;
+
+  if (options.plain &amp;&amp; !options.ssl)
+    base.call(this, handler);
+  else
+    base.call(this, options, handler);
+
+  // Use https if neither NPN or ALPN is supported
+  if (!process.features.tls_npn &amp;&amp; !process.features.tls_alpn &amp;&amp;
+      !options.debug &amp;&amp; !options.plain)
+    return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_onConnection
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onConnection(socket) {
+  var self = this,
+      state = this._spdyState;
+
+  // Fallback to HTTPS if needed
+  var selectedProtocol = socket.npnProtocol || socket.alpnProtocol;
+  if ((!selectedProtocol || !selectedProtocol.match(/spdy/)) &amp;&amp;
+      !state.options.debug &amp;&amp; !state.options.plain) {
+    return state.handler.call(this, socket);
+  }
+
+  // Wrap incoming socket into abstract class
+  var connection = new Connection(socket, state.options, this);
+  if (selectedProtocol === 'spdy/3.1')
+    connection._setVersion(3.1);
+  else if (selectedProtocol === 'spdy/3')
+    connection._setVersion(3);
+  else if (selectedProtocol === 'spdy/2')
+    connection._setVersion(2);
+
+  // Emulate each stream like connection
+  connection.on('stream', state.handler);
+
+  connection.on('connect', function onconnect(req, socket) {
+    socket.streamID = req.streamID = req.socket._spdyState.id;
+    socket.isSpdy = req.isSpdy = true;
+    socket.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+
+    socket.once('finish', function onfinish() {
+      req.connection.end();
+    });
+
+    self.emit('connect', req, socket);
+  });
+
+  connection.on('request', function onrequest(req, res) {
+    // Copy extension methods
+    res._renderHeaders = spdy.response._renderHeaders;
+    res.writeHead = spdy.response.writeHead;
+    res.end = spdy.response.end;
+    res.push = spdy.response.push;
+    res.streamID = req.streamID = req.socket._spdyState.id;
+    res.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+    res.isSpdy = req.isSpdy = true;
+    res.addTrailers = function addTrailers(headers) {
+      res.socket.sendHeaders(headers);
+    };
+
+    // Make sure that keep-alive won't apply to the response
+    res._last = true;
+
+    // Chunked encoding is not supported in SPDY
+    res.useChunkedEncodingByDefault = false;
+
+    // Populate trailing headers
+    req.connection.on('headers', function(headers) {
+      Object.keys(headers).forEach(function(key) {
+        req.trailers[key] = headers[key];
+      });
+      req.emit('trailers', headers);
+    });
+
+    self.emit('request', req, res);
+  });
+
+  connection.on('error', function onerror(e) {
+    socket.destroy(e.errno === 'EPIPE' ? undefined : e);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_wrap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _wrap() {
+  var self = this,
+      state = this._spdyState;
+
+  // Wrap connection handler
+  var event = state.options.plain &amp;&amp; !state.options.ssl ? 'connection' :
+                                                          'secureConnection',
+      handler = this.listeners(event)[0];
+
+  state.handler = handler;
+
+  this.removeAllListeners(event);
+
+  // 2 minutes default timeout
+  if (state.options.timeout !== undefined)
+    this.timeout = state.options.timeout;
+  else
+    this.timeout = this.timeout || 2 * 60 * 1000;
+
+  // Normal mode, use NPN or ALPN to fallback to HTTPS
+  if (!state.options.plain)
+    return this.on(event, this._onConnection.bind(this));
+
+  // In case of plain connection, we must fallback to HTTPS if first byte
+  // is not equal to 0x80.
+  this.on(event, function(socket) {
+    var history = [],
+        _emit = socket.emit;
+
+    // Add 'data' listener, otherwise 'data' events won't be emitted
+    if (spdy.utils.isLegacy) {
+      function ondata() {};
+      socket.once('data', ondata);
+    }
+
+    // 2 minutes timeout, as http.js does by default
+    socket.setTimeout(self.timeout);
+
+    socket.emit = function emit(event, data) {
+      history.push(Array.prototype.slice.call(arguments));
+
+      if (event === 'data') {
+        // Legacy
+        if (spdy.utils.isLegacy)
+          onFirstByte.call(socket, data);
+      } else if (event === 'readable') {
+        // Streams
+        onReadable.call(socket);
+      } else if (event === 'end' ||
+                 event === 'close' ||
+                 event === 'error' ||
+                 event === 'timeout') {
+        // We shouldn't get there if any data was received
+        fail();
+      }
+    };
+
+    function fail() {
+      socket.emit = _emit;
+      history = null;
+      socket.removeListener('readable', onReadable);
+
+      try {
+        socket.destroy();
+      } catch (e) {
+      }
+    }
+
+    function restore() {
+      var copy = history.slice();
+      history = null;
+
+      socket.removeListener('readable', onReadable);
+      if (spdy.utils.isLegacy)
+        socket.removeListener('data', ondata);
+      socket.emit = _emit;
+      for (var i = 0; i &lt; copy.length; i++) {
+        if (copy[i][0] !== 'data' || spdy.utils.isLegacy)
+          socket.emit.apply(socket, copy[i]);
+        if (copy[i][0] === 'end' &amp;&amp; socket.onend)
+          socket.onend();
+      }
+    }
+
+    function onFirstByte(data) {
+      // Ignore empty packets
+      if (data.length === 0)
+        return;
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      // NOTE: If we came there - .ondata() will be called anyway in this tick,
+      // so there're no need to call it manually
+    };
+
+    // Hack to make streams2 work properly
+    if (!spdy.utils.isLegacy)
+      socket.on('readable', onReadable);
+
+    function onReadable() {
+      var data = socket.read(1);
+
+      // Ignore empty packets
+      if (!data)
+        return;
+      socket.removeListener('readable', onReadable);
+
+      // `.unshift()` emits `readable` event. Thus `emit` method should
+      // be restored before calling it.
+      socket.emit = _emit;
+
+      // Put packet back where it was before
+      socket.unshift(data);
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      if (socket.ondata) {
+        data = socket.read(socket._readableState.length);
+        if (data)
+          socket.ondata(data, 0, data.length);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._init" id="apidoc.module.spdyproxy.SPDYProxy.super_.prototype._init">module spdyproxy.SPDYProxy.super_.prototype._init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init._init" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._init._init">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_init
+        <span class="apidocSignatureSpan">(base, options, handler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _init(base, options, handler) {
+  var state = {};
+  this._spdyState = state;
+
+  if (!options)
+    options = {};
+
+  // Copy user supplied options
+  options = util._extend({}, options);
+
+  var supportedProtocols = [
+    'spdy/3.1', 'spdy/3', 'spdy/2',
+    'http/1.1', 'http/1.0'
+  ];
+  options.NPNProtocols = supportedProtocols;
+  options.ALPNProtocols = supportedProtocols;
+  options.isServer = true;
+
+  // Header compression is enabled by default in servers, in contrast to clients
+  // where it is disabled to prevent CRIME attacks.
+  // See: https://groups.google.com/d/msg/spdy-dev/6mVYRv-lbuc/qGcW2ldOpt8J
+  if (options.headerCompression !== false)
+    options.headerCompression = true;
+
+  state.options = options;
+  state.reqHandler = handler;
+
+  if (options.plain &amp;&amp; !options.ssl)
+    base.call(this, handler);
+  else
+    base.call(this, options, handler);
+
+  // Use https if neither NPN or ALPN is supported
+  if (!process.features.tls_npn &amp;&amp; !process.features.tls_alpn &amp;&amp;
+      !options.debug &amp;&amp; !options.plain)
+    return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._onConnection" id="apidoc.module.spdyproxy.SPDYProxy.super_.prototype._onConnection">module spdyproxy.SPDYProxy.super_.prototype._onConnection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection._onConnection" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._onConnection._onConnection">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_onConnection
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onConnection(socket) {
+  var self = this,
+      state = this._spdyState;
+
+  // Fallback to HTTPS if needed
+  var selectedProtocol = socket.npnProtocol || socket.alpnProtocol;
+  if ((!selectedProtocol || !selectedProtocol.match(/spdy/)) &amp;&amp;
+      !state.options.debug &amp;&amp; !state.options.plain) {
+    return state.handler.call(this, socket);
+  }
+
+  // Wrap incoming socket into abstract class
+  var connection = new Connection(socket, state.options, this);
+  if (selectedProtocol === 'spdy/3.1')
+    connection._setVersion(3.1);
+  else if (selectedProtocol === 'spdy/3')
+    connection._setVersion(3);
+  else if (selectedProtocol === 'spdy/2')
+    connection._setVersion(2);
+
+  // Emulate each stream like connection
+  connection.on('stream', state.handler);
+
+  connection.on('connect', function onconnect(req, socket) {
+    socket.streamID = req.streamID = req.socket._spdyState.id;
+    socket.isSpdy = req.isSpdy = true;
+    socket.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+
+    socket.once('finish', function onfinish() {
+      req.connection.end();
+    });
+
+    self.emit('connect', req, socket);
+  });
+
+  connection.on('request', function onrequest(req, res) {
+    // Copy extension methods
+    res._renderHeaders = spdy.response._renderHeaders;
+    res.writeHead = spdy.response.writeHead;
+    res.end = spdy.response.end;
+    res.push = spdy.response.push;
+    res.streamID = req.streamID = req.socket._spdyState.id;
+    res.spdyVersion = req.spdyVersion = req.socket._spdyState.framer.version;
+    res.isSpdy = req.isSpdy = true;
+    res.addTrailers = function addTrailers(headers) {
+      res.socket.sendHeaders(headers);
+    };
+
+    // Make sure that keep-alive won't apply to the response
+    res._last = true;
+
+    // Chunked encoding is not supported in SPDY
+    res.useChunkedEncodingByDefault = false;
+
+    // Populate trailing headers
+    req.connection.on('headers', function(headers) {
+      Object.keys(headers).forEach(function(key) {
+        req.trailers[key] = headers[key];
+      });
+      req.emit('trailers', headers);
+    });
+
+    self.emit('request', req, res);
+  });
+
+  connection.on('error', function onerror(e) {
+    socket.destroy(e.errno === 'EPIPE' ? undefined : e);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.prototype._wrap" id="apidoc.module.spdyproxy.SPDYProxy.super_.prototype._wrap">module spdyproxy.SPDYProxy.super_.prototype._wrap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap._wrap" id="apidoc.element.spdyproxy.SPDYProxy.super_.prototype._wrap._wrap">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.prototype.</span>_wrap
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _wrap() {
+  var self = this,
+      state = this._spdyState;
+
+  // Wrap connection handler
+  var event = state.options.plain &amp;&amp; !state.options.ssl ? 'connection' :
+                                                          'secureConnection',
+      handler = this.listeners(event)[0];
+
+  state.handler = handler;
+
+  this.removeAllListeners(event);
+
+  // 2 minutes default timeout
+  if (state.options.timeout !== undefined)
+    this.timeout = state.options.timeout;
+  else
+    this.timeout = this.timeout || 2 * 60 * 1000;
+
+  // Normal mode, use NPN or ALPN to fallback to HTTPS
+  if (!state.options.plain)
+    return this.on(event, this._onConnection.bind(this));
+
+  // In case of plain connection, we must fallback to HTTPS if first byte
+  // is not equal to 0x80.
+  this.on(event, function(socket) {
+    var history = [],
+        _emit = socket.emit;
+
+    // Add 'data' listener, otherwise 'data' events won't be emitted
+    if (spdy.utils.isLegacy) {
+      function ondata() {};
+      socket.once('data', ondata);
+    }
+
+    // 2 minutes timeout, as http.js does by default
+    socket.setTimeout(self.timeout);
+
+    socket.emit = function emit(event, data) {
+      history.push(Array.prototype.slice.call(arguments));
+
+      if (event === 'data') {
+        // Legacy
+        if (spdy.utils.isLegacy)
+          onFirstByte.call(socket, data);
+      } else if (event === 'readable') {
+        // Streams
+        onReadable.call(socket);
+      } else if (event === 'end' ||
+                 event === 'close' ||
+                 event === 'error' ||
+                 event === 'timeout') {
+        // We shouldn't get there if any data was received
+        fail();
+      }
+    };
+
+    function fail() {
+      socket.emit = _emit;
+      history = null;
+      socket.removeListener('readable', onReadable);
+
+      try {
+        socket.destroy();
+      } catch (e) {
+      }
+    }
+
+    function restore() {
+      var copy = history.slice();
+      history = null;
+
+      socket.removeListener('readable', onReadable);
+      if (spdy.utils.isLegacy)
+        socket.removeListener('data', ondata);
+      socket.emit = _emit;
+      for (var i = 0; i &lt; copy.length; i++) {
+        if (copy[i][0] !== 'data' || spdy.utils.isLegacy)
+          socket.emit.apply(socket, copy[i]);
+        if (copy[i][0] === 'end' &amp;&amp; socket.onend)
+          socket.onend();
+      }
+    }
+
+    function onFirstByte(data) {
+      // Ignore empty packets
+      if (data.length === 0)
+        return;
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      // NOTE: If we came there - .ondata() will be called anyway in this tick,
+      // so there're no need to call it manually
+    };
+
+    // Hack to make streams2 work properly
+    if (!spdy.utils.isLegacy)
+      socket.on('readable', onReadable);
+
+    function onReadable() {
+      var data = socket.read(1);
+
+      // Ignore empty packets
+      if (!data)
+        return;
+      socket.removeListener('readable', onReadable);
+
+      // `.unshift()` emits `readable` event. Thus `emit` method should
+      // be restored before calling it.
+      socket.emit = _emit;
+
+      // Put packet back where it was before
+      socket.unshift(data);
+
+      if (data[0] === 0x80)
+        self._onConnection(socket);
+      else
+        handler.call(self, socket);
+
+      // Fire events
+      restore();
+
+      if (socket.ondata) {
+        data = socket.read(socket._readableState.length);
+        if (data)
+          socket.ondata(data, 0, data.length);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.SPDYProxy.super_.super_.prototype" id="apidoc.module.spdyproxy.SPDYProxy.super_.super_.prototype">module spdyproxy.SPDYProxy.super_.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.SPDYProxy.super_.super_.prototype.setTimeout" id="apidoc.element.spdyproxy.SPDYProxy.super_.super_.prototype.setTimeout">
+        function <span class="apidocSignatureSpan">spdyproxy.SPDYProxy.super_.super_.prototype.</span>setTimeout
+        <span class="apidocSignatureSpan">(msecs, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTimeout = function (msecs, callback) {
+  this.timeout = msecs;
+  if (callback)
+    this.on('timeout', callback);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.cmdpwdhelper" id="apidoc.module.spdyproxy.cmdpwdhelper">module spdyproxy.cmdpwdhelper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.cmdpwdhelper.cmdpwdhelper" id="apidoc.element.spdyproxy.cmdpwdhelper.cmdpwdhelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>cmdpwdhelper
+        <span class="apidocSignatureSpan">(correct_user, correct_pass)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CmdPwdHelper(correct_user, correct_pass) {
+  this.friendly_name = "cmdline password authenticator";
+  this._correct_user = correct_user;
+  this._correct_pass = correct_pass;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.cmdpwdhelper.prototype" id="apidoc.module.spdyproxy.cmdpwdhelper.prototype">module spdyproxy.cmdpwdhelper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.cmdpwdhelper.prototype.authUser" id="apidoc.element.spdyproxy.cmdpwdhelper.prototype.authUser">
+        function <span class="apidocSignatureSpan">spdyproxy.cmdpwdhelper.prototype.</span>authUser
+        <span class="apidocSignatureSpan">(username, password, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authUser = function (username, password, callback) {
+  callback(this._correct_user == username &amp;&amp; this._correct_pass == password);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  parts = auth.split(/:/),
+  username = parts[0],
+  password = parts[1];
+
+      // don't pass proxy-auth headers upstream
+      delete req.headers['proxy-authorization'];
+
+      self._authHandler.<span class="apidocCodeKeywordSpan">authUser</span>(username, password, function(authPassed) {
+if (authPassed)
+  return dispatcher(req, res);
+
+synReply(socket, 407, 'Proxy Authentication Required',
+  {'proxy-authenticate': 'Basic realm="SPDY Proxy"'},
+  function() {
+    socket.end();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.createServer" id="apidoc.module.spdyproxy.createServer">module spdyproxy.createServer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.createServer.createServer" id="apidoc.element.spdyproxy.createServer.createServer">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>createServer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (options) {
+  return new SPDYProxy(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.logginghelper" id="apidoc.module.spdyproxy.logginghelper">module spdyproxy.logginghelper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.logginghelper.logginghelper" id="apidoc.element.spdyproxy.logginghelper.logginghelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>logginghelper
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LoggingHelper(filename) {
+	this._filename = filename;
+	time = dateFormat(new Date (), "%Y-%m-%d %H:%M:%S", false);
+	fs.appendFile(filename, time + ' node-spdyproxy is now running\n', function (err) {
+		if (err) {
+			throw err;
+			process.exit();
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.logginghelper.prototype" id="apidoc.module.spdyproxy.logginghelper.prototype">module spdyproxy.logginghelper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.logginghelper.prototype.log" id="apidoc.element.spdyproxy.logginghelper.prototype.log">
+        function <span class="apidocSignatureSpan">spdyproxy.logginghelper.prototype.</span>log
+        <span class="apidocSignatureSpan">(socket, req)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (socket, req) {
+	var addr = socket.connection ? socket.connection.socket.remoteAddress : socket.socket.remoteAddress;
+	time = dateFormat(new Date (), "%Y-%m-%d %H:%M:%S", false);
+	logstring = time + " " + addr + " " + req.method;
+	logstring += (req.method == 'CONNECT')?(" \"" + req.url + "\""):(" \"" + req.headers['host'] + "\" \"" + req.url + "\"");
+	logstring += "\n";
+
+	fs.appendFile(this._filename, logstring, function (err) {
+		if (err) {
+			throw err;
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (username.length == 0 || password.length == 0){
+  this._authReadyNotify.emit(username, true);
+  callback(false);
+  return;
+}
+
+if (cached_user = cache.get(username)) { // cache available
+  if (this._verbose) console.<span class="apidocCodeKeywordSpan">log</span>(cached_user);
+  if (cached_user.state == 'fetching') { // cache incomplete, wait
+    if (this._verbose) console.log("# incomplete cache, waiting...".grey);
+    this._authReadyNotify.on(username, function(unexpectedResult) {
+      if (unexpectedResult) {
+        callback(false);
+        return;
+      }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.radiushelper" id="apidoc.module.spdyproxy.radiushelper">module spdyproxy.radiushelper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.radiushelper.radiushelper" id="apidoc.element.spdyproxy.radiushelper.radiushelper">
+        function <span class="apidocSignatureSpan">spdyproxy.</span>radiushelper
+        <span class="apidocSignatureSpan">(server, port, secret, nasid, cred_ttl, verbose)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RADIUSHelper(server, port, secret, nasid, cred_ttl, verbose) {
+  this.friendly_name = "RADIUS remote authenticator";
+  this._verbose = verbose;
+
+  this._server = server;
+  this._port = port;
+  this._secret = secret;
+  this._nasid = nasid;
+  this._creds_ttl = cred_ttl;
+
+  this._authPacketId = 0;
+  this._authCallbacks = {};
+  this._authReadyNotify = new EventEmitter();
+  this._authReadyNotify.setMaxListeners(100);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.radiushelper.prototype" id="apidoc.module.spdyproxy.radiushelper.prototype">module spdyproxy.radiushelper.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.radiushelper.prototype.acctAdd" id="apidoc.element.spdyproxy.radiushelper.prototype.acctAdd">
+        function <span class="apidocSignatureSpan">spdyproxy.radiushelper.prototype.</span>acctAdd
+        <span class="apidocSignatureSpan">(packet_length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">acctAdd = function (packet_length) {
+  // TODO
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.radiushelper.prototype.authUser" id="apidoc.element.spdyproxy.radiushelper.prototype.authUser">
+        function <span class="apidocSignatureSpan">spdyproxy.radiushelper.prototype.</span>authUser
+        <span class="apidocSignatureSpan">(username, password, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authUser = function (username, password, callback) {
+  self = this;
+
+  if (username.length == 0 || password.length == 0){
+    this._authReadyNotify.emit(username, true);
+    callback(false);
+    return;
+  }
+
+  if (cached_user = cache.get(username)) { // cache available
+    if (this._verbose) console.log(cached_user);
+    if (cached_user.state == 'fetching') { // cache incomplete, wait
+      if (this._verbose) console.log("# incomplete cache, waiting...".grey);
+      this._authReadyNotify.on(username, function(unexpectedResult) {
+        if (unexpectedResult) {
+          callback(false);
+          return;
+        }
+
+        if (cached_user = cache.get(username)) {
+          cached_user = cache.get(username);
+          callback(cached_user['password'] == password);
+        } else {
+          callback(false);
+        }
+      })
+    } else { // go ahead
+      if (this._verbose) console.log("# user is cached".grey);
+      callback(cached_user['password'] == password);
+    }
+  } else { // nothing is cached, request now
+    if (this._verbose) console.log("# RADIUS user is NOT cached, requesting now:".grey);
+
+    cache.put(username,
+              {'state': 'fetching'},
+              this._creds_ttl*60*1000);
+
+    this._authCallbacks[this._authPacketId] = callback;
+
+    var radiusPacket = {
+      code: "Access-Request",
+      secret: this._secret,
+      identifier: this._authPacketId++,
+      attributes: [
+        ['NAS-Identifier', this._nasid],
+        ['User-Name', username],
+        ['User-Password', password]
+      ]
+    };
+
+    var udpClient = dgram.createSocket("udp4");
+    udpClient.bind();
+
+    udpClient.on('message', function(msg, rinfo) {
+      udpClient.close();
+      var response = radius.decode({packet: msg, secret: self._secret});
+
+      if (this._verbose) console.log(response.code);
+      if (response.code == 'Access-Reject') {
+        cached_maybe_incomplete_user = cache.get(username);
+        if (cached_maybe_incomplete_user &amp;&amp; cached_maybe_incomplete_user.state != 'current')
+          cache.del(username);
+
+        self._authCallbacks[response.identifier](false);
+        return;
+      }
+
+      cache.put(username,
+                {'password': password, 'state': 'current'},
+                self._creds_ttl*60*1000);
+      self._authReadyNotify.emit(username, false);
+
+      self._authCallbacks[response.identifier](true);
+    });
+
+    try {
+      if (this._verbose) console.log(radiusPacket);
+      var encoded = radius.encode(radiusPacket);
+      udpClient.send(encoded, 0, encoded.length, this._port, this._server);
+    } catch(error) {
+      this._authReadyNotify.emit(username, true);
+      callback(false);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  parts = auth.split(/:/),
+  username = parts[0],
+  password = parts[1];
+
+      // don't pass proxy-auth headers upstream
+      delete req.headers['proxy-authorization'];
+
+      self._authHandler.<span class="apidocCodeKeywordSpan">authUser</span>(username, password, function(authPassed) {
+if (authPassed)
+  return dispatcher(req, res);
+
+synReply(socket, 407, 'Proxy Authentication Required',
+  {'proxy-authenticate': 'Basic realm="SPDY Proxy"'},
+  function() {
+    socket.end();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spdyproxy.server" id="apidoc.module.spdyproxy.server">module spdyproxy.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.server.SPDYProxy" id="apidoc.element.spdyproxy.server.SPDYProxy">
+        function <span class="apidocSignatureSpan">spdyproxy.server.</span>SPDYProxy
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SPDYProxy = function (options) {
+  var self = this;
+
+  this.setAuthHandler = function(handler) {
+    self._authHandler = handler;
+    console.log('AuthHandler'.green, handler.friendly_name.yellow,
+                'will be used.'.green);
+  }
+
+  this.setLogHandler = function(handler) {
+    self._logHandler = handler;
+    console.log('Requests will be logged into file'.green, handler._filename.yellow);
+  }
+
+  function logRequest(req) {
+    console.log(req.method.green + ' ' + req.url.yellow);
+    for (var i in req.headers)
+      console.log(' &gt; '.grey + i.cyan + ': ' + req.headers[i]);
+    console.log();
+  }
+
+  function synReply(socket, code, reason, headers, cb) {
+    try {
+      // SPDY socket
+      if(socket._lock){
+        socket._lock(function() {
+          var socket = this;
+          this._spdyState.framer.replyFrame(
+            this._spdyState.id, code, reason, headers,
+            function (err, frame) {
+              socket.connection.write(frame);
+              socket._unlock();
+              cb.call();
+            }
+          );
+        });
+
+      // Chrome used raw SSL instead of SPDY when issuing CONNECT for
+      // WebSockets. Hence, to support WS we must fallback to regular
+      // HTTPS tunelling: https://github.com/igrigorik/node-spdyproxy/issues/26
+      } else {
+        var statusLine = 'HTTP/1.1 ' + code + ' ' + reason + '\r\n';
+        var headerLines = '';
+        for(key in headers){
+            headerLines += key + ': ' + headers[key] + '\r\n';
+        }
+        socket.write(statusLine + headerLines + '\r\n', 'UTF-8', cb);
+      }
+    } catch(error) {
+      cb.call();
+    }
+  }
+
+  function handlePlain(req, res) {
+    var path = req.headers.path || url.parse(req.url).path;
+    var requestOptions = {
+      host: req.headers.host.split(':')[0],
+      port: req.headers.host.split(':')[1] || 80,
+      path: path,
+      method: req.method,
+      headers: req.headers
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var rreq = http.request(requestOptions, function(rres) {
+      rres.headers['proxy-agent'] = 'SPDY Proxy ' + options.version;
+
+      // write out headers to handle redirects
+      res.writeHead(rres.statusCode, '', rres.headers);
+      rres.pipe(res);
+
+      // Res could not write, but it could close connection
+      res.pipe(rres);
+    });
+
+    rreq.on('error', function(e) {
+      console.log("Client error: " + e.message);
+      res.writeHead(502, 'Proxy fetch failed');
+      res.end();
+    });
+
+    req.pipe(rreq);
+
+    // Just in case if socket will be shutdown before http.request will connect
+    // to the server.
+    res.on('close', function() {
+      rreq.abort();
+    });
+  }
+
+  function handleSecure(req, socket) {
+    var requestOptions = {
+      host: req.url.split(':')[0],
+      port: req.url.split(':')[1] || 443,
+    };
+    if (options.localAddress) {
+      requestOptions.localAddress = options.localAddress;
+    }
+
+    var tunnel = net.createConnection(requestOptions, function() {
+      synReply(socket, 200, 'Connection established',
+        {
+          'Connection': 'keep-alive',
+          'Proxy-Agent': 'SPDY Proxy ' + options.version
+        },
+        function() {
+          tunnel.pipe(socket);
+          socket.pipe(tunnel);
+        }
+      );
+    });
+
+    tunnel.setNoDelay(true);
+
+    tunnel.on('error', function(e) {
+      console.log("Tunnel error: ".red + e);
+      synReply(socket, 502, "Tunnel Error", {}, function() {
+        socket.end();
+      });
+    });
+  }
+
+  function handleRequest(req, res) {
+    var socket = (req.method == 'CONNECT') ? res : res.socket;
+    console.log("%s:%s".yellow + " - %s - " + "stream ID: " + "%s".yellow + " - priority: " + "%s".yellow,
+      socket.connection ? socket.connection.socket.remoteAddress : socket.socket.remoteAddress,
+      socket.connection ? socket.connection.socket.remotePort : socket.socket.remotePort,
+      req.method, res.id || (socket._spdyState &amp;&amp; socket._spdyState.id) || "none",
+      res.priority || (socket._spdyState &amp;&amp; socket._spdyState.priority) || "none"
+    );
+
+    // node- ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spdyproxy.server.createServer" id="apidoc.element.spdyproxy.server.createServer">
+        function <span class="apidocSignatureSpan">spdyproxy.server.</span>createServer
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (options) {
+  return new SPDYProxy(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
